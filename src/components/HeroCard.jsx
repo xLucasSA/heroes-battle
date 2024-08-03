@@ -1,13 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const HeroCard = ({ hero, onSelectHero }) => {
+const HeroCard = ({ hero, selectedHeroIds, onSelectHero }) => {
   let [imageUrl, setImageUrl] = useState(hero.images.xs);
   const [selected, setSelected] = useState(false);
 
+  useEffect(() => {
+    setSelected(selectedHeroIds.includes(hero.id));
+  }, [selectedHeroIds, hero.id]);
+
   const handleCardClick = () => {
-    setSelected(!selected);
-    onSelectHero(hero.id); // Envia o ID do herói para o componente pai
+    onSelectHero(hero.id);
   };
 
   const updateImageUrl = () => {
