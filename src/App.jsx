@@ -33,7 +33,11 @@ const App = () => {
 
   return (
     <div className="px-2 py-4 max-w-7xl">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div className="fixed top-0 left-0 flex justify-center items-center w-full bg-black h-16 place-content-center">
+        <div className="px-2 w-full max-w-7xl">
+          <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+        </div>
+      </div>
       <HeroList heroes={filteredHeroes} selectedHeroIds={selectedHeroIds} onSelectHero={handleSelectHero} />
     </div>
   );

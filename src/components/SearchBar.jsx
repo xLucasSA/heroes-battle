@@ -6,14 +6,14 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
   };
 
   return (
-    <div className="mb-4">
-      <input
+    <div>
+    <input
         type="text"
         placeholder="Search heroes..."
         value={searchTerm}
         onChange={handleChange}
         className="p-2 border border-gray-300 rounded"
-      />
+    />
     </div>
   );
 };
