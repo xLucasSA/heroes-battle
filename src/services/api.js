@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://homologacao3.azapfy.com.br/api/ps/metahumans';
+const API_URL = '/api/ps/metahumans';
 
 export const fetchHeroes = async () => {
   try {
