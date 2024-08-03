@@ -9,11 +9,22 @@ const useFetchHeroes = () => {
   useEffect(() => {
     const getHeroes = async () => {
       try {
-        const data = await fetchHeroes();
-        setHeroes(data);
-      } catch (error) {
+        const cachedHeroes = localStorage.getItem('heroes');
+        
+        if (cachedHeroes) {
+          setHeroes(JSON.parse(cachedHeroes));
+        } 
+        else {
+          const data = await fetchHeroes();
+          setHeroes(data);
+          localStorage.setItem('heroes', JSON.stringify(data))
+        } 
+      }
+
+      catch (error) {
         setError(error);
-      } finally {
+      } 
+      finally {
         setLoading(false);
       }
     };
