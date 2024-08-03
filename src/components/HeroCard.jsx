@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const HeroCard = ({ hero }) => {
+const HeroCard = ({ hero, onSelectHero }) => {
   let [imageUrl, setImageUrl] = useState(hero.images.xs);
   const [selected, setSelected] = useState(false);
 
