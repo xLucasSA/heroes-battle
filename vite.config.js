@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react-refresh';
 
 export default defineConfig({
   plugins: [react()],
+  css: {
+    postcss: './postcss.config.js',
+  },
   server: {
     proxy: {
       '/api': {
