@@ -9,13 +9,13 @@ import { Button } from '@mui/material'
 
 const App = () => {
   const { heroes, loading, error } = useFetchHeroes();
-  const [selectedHeroIds, setSelectedHeroIds] = useState([]);
+  const [selectedHeroes, setSelectedHeroes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [open, setOpen] = useState(false);
   const [winner, setWinner] = useState(null);
 
   const handleOpen = () => {
-    const winnerHero = determineWinner(heroes, selectedHeroIds);
+    const winnerHero = determineWinner(selectedHeroes);
       setWinner(winnerHero);    
       setOpen(true);
   };
@@ -27,7 +27,7 @@ const App = () => {
 
   useEffect(() => {
     if (open === false){
-      setSelectedHeroIds([])
+      setSelectedHeroes([])
     }
   }, [open])
 
@@ -37,13 +37,13 @@ const App = () => {
     hero.name.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
   );
   
-  const handleSelectHero = (id) => {
-    setSelectedHeroIds(prevIds => {
-      if (prevIds.includes(id)) {
-        return prevIds.filter(heroId => heroId !== id);
+  const handleSelectHero = (hero) => {
+    setSelectedHeroes(prevHeroes => {
+      if (prevHeroes.includes(hero)) {
+        return prevHeroes.filter(currentHero => currentHero !== hero);
       } 
       else {
-        return [...prevIds, id];
+        return [...prevHeroes, hero];
       }
     });
   };
@@ -61,7 +61,7 @@ const App = () => {
           </Button>
         </div>
       </div>
-      <HeroList heroes={filteredHeroes} selectedHeroIds={selectedHeroIds} onSelectHero={handleSelectHero} />
+      <HeroList heroes={filteredHeroes} selectedHeroes={selectedHeroes} onSelectHero={handleSelectHero} />
       <WinnerModal open={open} handleClose={handleClose} winner={winner} />
     </div>
   );

@@ -1,16 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-const HeroCard = ({ hero, selectedHeroIds, onSelectHero }) => {
+const HeroCard = ({ hero, selectedHeroes, onSelectHero }) => {
   let [imageUrl, setImageUrl] = useState(hero.images.xs);
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
-    setSelected(selectedHeroIds.includes(hero.id));
-  }, [selectedHeroIds, hero.id]);
+    setSelected(selectedHeroes.includes(hero));
+  }, [selectedHeroes, hero]);
 
   const handleCardClick = () => {
-    onSelectHero(hero.id);
+    onSelectHero(hero);
   };
 
   const updateImageUrl = () => {

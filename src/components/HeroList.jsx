@@ -2,7 +2,7 @@ import React from 'react';
 import HeroCard from './HeroCard';
 import { useState, useEffect } from 'react';
 
-const HeroList = ({ heroes, selectedHeroIds, onSelectHero }) => {
+const HeroList = ({ heroes, selectedHeroes, onSelectHero }) => {
   const [displayedHeroes, setDisplayedHeroes] = useState([]);
   const [visibleCount, setVisibleCount] = useState(20);
 
@@ -34,7 +34,7 @@ const HeroList = ({ heroes, selectedHeroIds, onSelectHero }) => {
           key={hero.id} 
           hero={hero} 
           onSelectHero={onSelectHero}
-          selectedHeroIds={selectedHeroIds}
+          selectedHeroes={selectedHeroes}
         />
       ))}
     </div>
