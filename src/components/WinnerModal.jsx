@@ -24,7 +24,7 @@ const WinnerModal = ({ open, handleClose, winner }) => {
     >
       <Box sx={style} className="flex items-center flex-col">
         <Typography id="winner-modal-title" variant="h6" component="h2">
-          Winning Hero!
+        {winner ? "Winning Hero!" : ""}
         </Typography>
         <Typography id="winner-modal-description" sx={{ mt: 2 }}>
           {winner ? (
@@ -34,7 +34,7 @@ const WinnerModal = ({ open, handleClose, winner }) => {
               <p className="text-gray-700 text-base">{winner.biography.placeOfBirth}</p>
             </>
           ) : (
-            "Nenhum herói selecionado."
+            "Insufficient number of Heroes."
           )}
         </Typography>
         <Button onClick={handleClose} variant="contained" color="primary" sx={{ mt: 2 }}>
