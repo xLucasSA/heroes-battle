@@ -35,7 +35,7 @@ const HeroCard = ({ hero, selectedHeroIds, onSelectHero }) => {
 
   return (
     <div 
-      className={`max-w-xs rounded overflow-hidden shadow-lg border-4 bg-white hover:bg-blue-200 transition-all p-7 flex flex-col items-center last:justify-end cursor-pointer ${selected ? 'border-blue-500 bg-blue-200' : ''}`}
+      className={`max-w-xs rounded overflow-hidden shadow-lg border-4 hover:bg-blue-200 transition-all p-7 flex flex-col items-center last:justify-end cursor-pointer ${selected ? 'border-blue-500 bg-blue-200' : 'bg-white'}`}
       onClick={handleCardClick}
     >
       <img className="sm:h-52 md:h-60 lg:h-72 object-cover rounded" src={imageUrl} alt={hero.name} />
