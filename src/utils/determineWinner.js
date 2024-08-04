@@ -3,9 +3,7 @@ const determineWinner = (selectedHeroesId) => {
       return null;
     }
     
-    const winner = selectedHeroesId.reduce((prev, current) => {
-      console.log(prev, current);
-      
+    const winner = selectedHeroesId.reduce((prev, current) => {    
       const prevPower = Object.values(prev.powerstats).reduce((a, b) => a + b, 0);
       const currentPower = Object.values(current.powerstats).reduce((a, b) => a + b, 0);
       
