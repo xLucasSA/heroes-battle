@@ -79,10 +79,6 @@ This project is a React application created with Vite that allows you to search 
 - **Tailwind CSS**: You can customize the styles by modifying the `tailwind.config.js` file and adding Tailwind CSS classes to your components.
 - **Material-UI**: To customize Material-UI components, you can use the theming system provided by the library.
 
-## Known Issues
-
-- CORS issues when making requests to the API. Ensure that the API allows requests from your local domain.
-
 ## Contribution
 
 Contributions are welcome! Feel free to open issues and pull requests.
@@ -175,10 +171,6 @@ Este projeto é uma aplicação React criada com Vite que permite buscar e compa
 
 - **Tailwind CSS**: Você pode personalizar os estilos modificando o arquivo `tailwind.config.js` e adicionando classes Tailwind CSS aos seus componentes.
 - **Material-UI**: Para customizar os componentes Material-UI, você pode utilizar o sistema de temas fornecido pela biblioteca.
-
-## Problemas Conhecidos
-
-- Problemas de CORS ao fazer requisições para a API. Certifique-se de que a API permite requisições do seu domínio local.
 
 ## Contribuição
 
