@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = '/api/ps/metahumans';
+const API_URL = import.meta.env.VITE_API_URL || '/api/ps/metahumans';
 
 export const fetchHeroes = async () => {
   try {
